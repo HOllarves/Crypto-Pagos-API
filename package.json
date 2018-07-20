@@ -1,0 +1,17 @@
+{
+  "name": "btc-pay-server-api",
+  "version": "1.0.0",
+  "description": "Node server that communicates with private implementation of BTCPay Server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Henry Ollarves",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "btcpay": "git+https://github.com/tanjalo/node-btcpay.git",
+    "cors": "^2.8.4",
+    "express": "^4.16.3"
+  }
+}
