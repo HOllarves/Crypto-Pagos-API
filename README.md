@@ -4,7 +4,7 @@ Express server that interacts with a BTC pay server instance. To use make sure t
 
 ## Dependencies:
 
-- Express: 16.4.1
-- BodyParser UI: 1.4
-- CORS: 0.18
-- node-btcpay: 3.5
+- Express: 4.16
+- BodyParser: 1.18
+- CORS: 2.8.4
+- node-btcpay
