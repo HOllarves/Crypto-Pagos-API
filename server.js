@@ -13,7 +13,6 @@ app.use(cors())
 
 const pkey = fs.readFileSync("./config/pkey.txt")
 const pairingCode = JSON.parse(fs.readFileSync("./config/pairingCode.txt"))
-
 const keypair = btcpay.crypto.load_keypair(new Buffer(pkey, "hex"))
 const client = new btcpay.BTCPayClient(process.env.BTC_PAY_SERVER_URL, keypair, pairingCode)
 
