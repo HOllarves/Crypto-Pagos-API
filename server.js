@@ -86,5 +86,7 @@ app.get('/rates', (req, res) => {
     }
 })
 
+app.get('/', (req, res) => { res.send("There you are...") })
+
 app.listen(PORT)
 console.log("App running on PORT: ", PORT)
