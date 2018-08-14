@@ -5,6 +5,8 @@ const express = require('express'),
     fs = require('fs'),
     PORT = process.env.PORT || 8085
 
+require('dotenv').load()
+
 // Starting up express
 var app = express()
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,7 +16,7 @@ app.use(cors())
 const pkey = fs.readFileSync("./config/pkey.txt")
 const pairingCode = JSON.parse(fs.readFileSync("./config/pairingCode.txt"))
 const keypair = btcpay.crypto.load_keypair(new Buffer(pkey, "hex"))
-const client = new btcpay.BTCPayClient(process.env.BTC_PAY_SERVER_URL, keypair, pairingCode)
+const client = new btcpay.BTCPayClient(process.env.SERVER_URL, keypair, pairingCode)
 
 app.post('/', (req, res) => {
 
@@ -34,6 +36,8 @@ app.post('/', (req, res) => {
             "price": price,
             "currency": currency
         }
+
+        console.log(invoice)
 
         client.create_invoice(invoice)
             .then(invoice => {
